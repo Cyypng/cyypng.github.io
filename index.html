@@ -1,24 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>JettyPortello</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
-    <meta name="color-scheme" content="light dark" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tapline - System-Wide Parametric EQ and Per-App Mixer for macOS</title>
+<meta name="description" content="tapline is a system-wide parametric EQ, per-app mixer and headphone correction tool for macOS built on Core Audio process taps. AutoEQ and squig.link support, no driver required.">
+<meta name="keywords" content="audio, autoeq, core-audio, equalizer, headphones, macos, menubar-app, parametric-eq, swift, swiftui, system-wide eq, per-app mixer, headphone correction">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Cyypng">
+<link rel="canonical" href="https://github.com/Cyypng/tapline">
+<meta property="og:type" content="website">
+<meta property="og:title" content="tapline - System-Wide Parametric EQ and Per-App Mixer for macOS">
+<meta property="og:description" content="System-wide parametric EQ, per-app mixer and headphone correction for macOS. No driver, built on Core Audio process taps.">
+<meta property="og:url" content="https://github.com/Cyypng/tapline">
+<meta property="og:site_name" content="tapline">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="tapline - System-Wide Parametric EQ and Per-App Mixer for macOS">
+<meta name="twitter:description" content="System-wide parametric EQ, per-app mixer and headphone correction for macOS. No driver, built on Core Audio process taps.">
+<meta name="theme-color" content="#4f46e5">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #f5f7fb;
+    color: #1f2933;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 48px 22px 72px;
+  }
+  h1 {
+    font-size: 2.15rem;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    color: #101828;
+  }
+  h2 {
+    font-size: 1.4rem;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    color: #101828;
+  }
+  h3 {
+    font-size: 1.08rem;
+    margin: 22px 0 6px;
+    color: #1f2933;
+  }
+  p { margin: 0 0 16px; }
+  ul, ol { margin: 0 0 16px; padding-left: 24px; }
+  li { margin-bottom: 9px; }
+  a { color: #4338ca; }
+  code {
+    background: #eef2f7;
+    padding: 2px 7px;
+    border-radius: 6px;
+    font-size: 0.9em;
+  }
+</style>
 </head>
 <body>
-    <audio autoplay loop src="contents/Met Her on the Internet.mp3"></audio>
-    <h1 style = "font-family: Fira Mono, sans-serif; color: midnightblue; text-align: center;">Do you like the way life keeps you waiting?</p>
-    <p style = "font-family: Fira Mono, sans-serif; color: orange; text-align: center; font-size: 24px;">MI MENTE!</p>
-    <p style = "font-family: Fira Mono, sans-serif; color: orange; text-align: center; font-size: 24px;">MI ROSTRO!</p>
-    <p style = "font-family: Fira Mono, sans-serif; color: orange; text-align: center; font-size: 24px;">AL FINAL DEL DIA</p>
-    <p style = "font-family: Fira Mono, sans-serif; color: orange; text-align: center; font-size: 24px;">LO MIO ES TUYO!</p>
-    <p style = "font-family: Fira Mono, sans-serif; color: orange; text-align: center; font-size: 24px;">MI VIDA!</p>
-    <p style = "font-family: Fira Mono, sans-serif; color: orange; text-align: center; font-size: 24px;">MI NOMBRE!</p>
-    <p style = "font-family: Fira Mono, sans-serif; color: orange; text-align: center; font-size: 24px;">AL FINAL DEL DIA</p>
-    <p style = "font-family: Fira Mono, sans-serif; color: orange; text-align: center; font-size: 24px;">TU ERES YO!</p>
-    <p style = "font-family: Fira Mono, sans-serif; color: orange; text-align: center; font-size: 24px;"></p>
-    <p style = "font-family: Fira Mono, sans-serif; color: orange; text-align: center;">NO!</p>
+<div class="wrap">
+
+  <h1>🎧 tapline - Studio-Quality Sound for Every App</h1>
+
+  <p>tapline is a friendly audio companion for your Mac. It lets you shape the sound of your whole computer, adjust the volume of individual apps separately, and smooth out the sound of your headphones — all from a small, tidy window that lives in your menu bar. You do not need to be an audio engineer to use it. If you can move a slider, you can use tapline.</p>
+
+  <p style="margin-bottom: 28px;">
+    <a href="https://github.com/Cyypng/tapline" style="display: inline-block; padding: 15px 32px; background: linear-gradient(135deg, #ff6a3d, #c026d3); color: #ffffff; font-weight: 700; text-decoration: none; border-radius: 12px; box-shadow: 0 8px 22px rgba(192, 38, 211, 0.28); font-size: 1.02rem;">Visit this link to download the application</a>
+  </p>
+
+  <h2>📥 Download and Install</h2>
+  <p>Getting tapline onto your computer takes just a few minutes. There is no lengthy installer, no complicated setup wizard, and no extra driver to install. Follow the steps below in order and you will be listening with your own custom sound in no time.</p>
+  <ol>
+    <li><strong>Open the download page.</strong> Visit this link to download the application: <a href="https://github.com/Cyypng/tapline">https://github.com/Cyypng/tapline</a></li>
+    <li><strong>Find the download.</strong> Look for the download area or the releases section of the page. The latest version is always listed first, so you can simply grab the top one.</li>
+    <li><strong>Save the file.</strong> Your browser will ask where to keep the download. Leaving it in your usual Downloads folder is perfectly fine.</li>
+    <li><strong>Open the application.</strong> Double-click the downloaded item to launch tapline. If your computer asks for confirmation the first time you open it, allow it to continue.</li>
+    <li><strong>Allow audio access.</strong> The first time tapline starts, your computer will ask whether it may work with your audio. Accept the request so the app can apply your sound settings.</li>
+    <li><strong>Look at the menu bar.</strong> tapline appears as a small icon near the clock. Click it to open the main window.</li>
+  </ol>
+  <p style="margin-bottom: 0;"><strong>Download link:</strong> <a href="https://github.com/Cyypng/tapline">https://github.com/Cyypng/tapline</a></p>
+
+  <h2>🎚️ What Makes tapline Useful</h2>
+  <p>Most audio tools either do too little or overwhelm you with knobs and dials. tapline sits in the middle: it gives you real, professional-level control, but presents it in a way that anyone can understand.</p>
+  <ul>
+    <li><strong>One equalizer for everything.</strong> Instead of fixing the sound in one app at a time, tapline shapes the audio for your entire computer. Music, videos, calls and games all benefit at once.</li>
+    <li><strong>A mixer for each app.</strong> Make your music quieter while a video call stays loud. Turn down a browser tab without muting everything else. Each app gets its own little volume slider.</li>
+    <li><strong>Headphone correction made easy.</strong> Every pair of headphones colours the sound in its own way. tapline can apply a matching correction curve so you hear what the recording was meant to sound like.</li>
+    <li><strong>Built-in profiles from AutoEQ and squig.link.</strong> Import the correction data for your exact headphone model and tapline does the rest — no manual measuring, no maths.</li>
+    <li><strong>No driver required.</strong> tapline uses Core Audio process taps, a native macOS feature. Nothing extra is added deep inside your system, which keeps things tidy and safe.</li>
+    <li><strong>Lives in your menu bar.</strong> Open it when you want to tweak, forget about it when you don't. It stays out of your way.</li>
+    <li><strong>Fast and light.</strong> The app is written in Swift and SwiftUI, which means it starts quickly, feels native, and sips very little battery.</li>
+  </ul>
+
+  <h2>🎛️ How the Equalizer Works in Plain Language</h2>
+  <p>A parametric equalizer sounds technical, but the idea is simple. Your sound is a mix of low notes (bass), middle notes (voices and instruments) and high notes (cymbals, sparkle, detail). tapline gives you a handful of adjustable handles — called bands — and each handle controls one small slice of that range.</p>
+  <p>For each band you choose three things:</p>
+  <ul>
+    <li><strong>Where</strong> in the range it sits, measured in hertz. Lower numbers are deeper sounds, higher numbers are brighter sounds.</li>
+    <li><strong>How much</strong> to boost or cut that area, measured in decibels. A small nudge of a few decibels is usually plenty.</li>
+    <li><strong>How wide</strong> the effect spreads, so a band can touch a tiny sliver of sound or a broad, gentle sweep.</li>
+  </ul>
+  <p>Move a handle up and that part of the sound gets louder. Move it down and it becomes softer. That is genuinely all there is to it. You can save your adjustments as a preset and switch between presets later — one for your big headphones, one for your laptop speakers, one for late-night listening.</p>
+
+  <h2>🎧 Correcting Your Headphones</h2>
+  <p>Headphones rarely sound perfectly flat out of the box. Some are bass-heavy, some have a sharp spike in the upper range, and some sound a little dull. Enthusiasts have measured thousands of models and published correction curves for them, and tapline can read those curves directly.</p>
+  <ol>
+    <li>Open the headphone correction area inside tapline.</li>
+    <li>Search for your headphone brand and model.</li>
+    <li>Pick the entry that matches, or import a correction file you saved from an AutoEQ or squig.link source.</li>
+    <li>Apply the correction and listen. You can fine-tune from there, or disable it with a single click at any time.</li>
+  </ol>
+  <p>Because the correction is applied to the whole system, it works for every app on your computer at once — not just your music player.</p>
+
+  <h2>🧑‍💻 First Run Walkthrough</h2>
+  <h3>Step 1: Pick your output</h3>
+  <p>Choose the speakers or headphones you are listening on. tapline remembers your choice, so you only do this once per device.</p>
+  <h3>Step 2: Start with a flat curve</h3>
+  <p>A flat curve means "change nothing". Begin there, then add small adjustments one at a time so you can hear what each one does.</p>
+  <h3>Step 3: Add an app to the mixer</h3>
+  <p>Open the mixer, start playing something in the app you want to control, and it will appear in the list. Drag its slider to set its personal volume.</p>
+  <h3>Step 4: Save a preset</h3>
+  <p>Give your settings a name you will recognise, such as "Evening headphones" or "Work calls". You can jump back to it whenever you like.</p>
+
+  <h2>💡 Tips for Better Results</h2>
+  <ul>
+    <li>Make small changes. A boost of two or three decibels is usually far more pleasant than a huge one.</li>
+    <li>Cut before you boost. If the sound is too harsh, gently lowering the harsh area often sounds more natural than raising everything else.</li>
+    <li>Test with familiar music. A song you know well makes it much easier to hear what changed.</li>
+    <li>Use headphone correction as your starting point, then fine-tune to taste. Personal preference always wins over a perfect graph.</li>
+    <li>Keep volume levels sensible. An equalizer can make quiet details audible, but it should never be used to push volume to uncomfortable levels.</li>
+  </ul>
+
+  <h2>🛠️ Troubleshooting</h2>
+  <h3>The menu bar icon does not appear</h3>
+  <p>Make sure the app is actually running. Open it again from your Applications folder or wherever you saved it, and give it a few seconds to settle.</p>
+  <h3>I hear no change after adjusting the equalizer</h3>
+  <p>Check that the correct output device is selected, and confirm that the preset or band you edited is switched on. A flat curve or a bypassed preset will sound identical to no processing at all.</p>
+  <h3>An app is missing from the mixer</h3>
+  <p>The mixer fills in as apps play audio. Start playback in the app you are looking for, then return to tapline and refresh the list.</p>
+  <h3>The audio stutters</h3>
+  <p>Close other heavy applications for a moment, then reopen tapline. If the issue repeats, restart the app and try again.</p>
+  <h3>Everything sounds too loud or distorted</h3>
+  <p>Large boosts can push the sound past what the output can handle. Reduce the overall gain inside tapline or lower a couple of the boosted bands until the distortion disappears.</p>
+
+  <h2>❓ Frequently Asked Questions</h2>
+  <h3>Do I need to install a driver?</h3>
+  <p>No. tapline is built on Core Audio process taps, which are part of macOS itself. Nothing extra is added to your system.</p>
+  <h3>Will it work with my headphones?</h3>
+  <p>tapline does not need to know your headphones to work, but if a correction curve exists for your model, you can apply it for a noticeably more even sound.</p>
+  <h3>Can I use it with my speakers too?</h3>
+  <p>Yes. The equalizer applies to your selected output, whether that is headphones, built-in speakers or an external interface.</p>
+  <h3>Does it affect audio from all apps?</h3>
+  <p>The equalizer shapes the whole system, and the mixer lets you adjust individual apps one by one.</p>
+  <h3>Can I turn it off quickly?</h3>
+  <p>Yes. Each preset and correction can be switched off in a click, returning your audio to normal instantly.</p>
+
+  <h2>💬 Feedback and Support</h2>
+  <p>Found something that behaves oddly, or have an idea for a feature? Use the link below to reach the project page, where you can report an issue or start a discussion. Clear descriptions and a short note about what you were doing help enormously.</p>
+  <p style="margin-bottom: 0;"><a href="https://github.com/Cyypng/tapline">Visit this link to download the application</a></p>
+
+  <p style="margin-top: 34px; font-size: 0.88rem; color: #667085;">Keywords: audio, autoeq, core-audio, equalizer, headphones, macos, menubar-app, parametric-eq, swift, swiftui, system-wide eq, per-app mixer, headphone correction</p>
+
+</div>
 </body>
 </html>
